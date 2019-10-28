@@ -1,1 +1,1 @@
-Repository of my blog
+Repository of my blog hosted at shouvikbasak.net
