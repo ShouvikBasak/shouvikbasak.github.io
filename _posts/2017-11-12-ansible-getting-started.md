@@ -1,6 +1,9 @@
 ---
 layout: post
 title:  "Ansible - getting started"
+description: "An introduction to using Ansible for automation. What is Ansible, what can be done with Ansible and some interesting points about Ansible" 
+categories: [Ansible]
+tags: [cloud, automation]
 date:   2017-11-12 07:55:09 +0530
 ---
 This article is for anyone who is evaluating how Ansible may help in their automation journey. While DevOps and Infrastructure as Code are becoming the norm from the startups to the enterprises, I had quite a few conversations on what Ansible is and how could Ansible help in managing the IT environments. This article is written considering those conversations I had in the last few weeks and hope this would give a brief about Ansible and its capabilities.

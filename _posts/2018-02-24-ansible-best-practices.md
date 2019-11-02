@@ -1,6 +1,9 @@
 ---
 layout: post
 title:  "Ansible best practices"
+description: "We review some best practices to consider while writing Ansible playbooks. This should be particularly useful for anyone starting with Ansible." 
+categories: [Ansible]
+tags: [cloud, automation]
 date:   2018-02-24 07:55:09 +0530
 ---
 "Ansible is a Swiss Army Knife for DevOps" - Tim Appnel, Principal Product Manager, Ansible. In this article we review some best practices to consider while writing the Ansible playbooks. This should be particularly useful for anyone starting with Ansible. While writing the playbooks in YAML, consider them as the documentation of the automation that you are bringing into the environment. Anyone with knowledge of Ansible should be able to read the playbooks and easily be able to decipher what those are expected to do.
