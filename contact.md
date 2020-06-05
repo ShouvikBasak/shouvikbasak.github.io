@@ -3,6 +3,8 @@ layout: page
 title: Contact Me
 permalink: /contact/
 ---
+<div class="aside">
+
 <form
   action="https://formspree.io/mpzydono"
   method="POST"
@@ -20,3 +22,5 @@ permalink: /contact/
 
   <button type="submit">Send</button>
 </form>
+
+</div>
