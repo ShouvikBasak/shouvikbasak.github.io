@@ -4,13 +4,13 @@ title: Reading List
 permalink: /reading-list/
 ---
 
-Some of my favourite books that I would recommend reading (or listening!). I listen to books in Audible, helping me to effectively use the time when I am driving or walking. Another excellent book platform I have discovered is [Leanpub](https://leanpub.com/), a book publishing platform with an agile approach to writing books.
+Some of my favourite books that I would recommend reading (or listening!). I listen to books in Audible, helping me to effectively use the time when I am driving or walking. Another website I have discovered is [Leanpub](https://leanpub.com/), a lean publishing platform with an agile approach to writing books.
 
 ### Technology
 
 #### Architecture
 * [37 Things One Architect Knows About IT Transformation](https://leanpub.com/37things) by Gregor Hohpe
-* [Cloud Strategy - An Architecture Guide to Successful Cloud Migration](https://leanpub.com/cloudstrategy) by Gregor Hohpe
+* [Cloud Strategy - An Architect Elevator Guide to Successful Cloud Migration](https://leanpub.com/cloudstrategy) by Gregor Hohpe
 
 #### DevOps
 * The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business by Gene Kim, Kevin Behr & George Spafford
