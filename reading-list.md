@@ -4,11 +4,19 @@ title: Reading List
 permalink: /reading-list/
 ---
 
-Some of my favourite books that I would recommend reading.
+Some of my favourite books that I would recommend reading (or listening!). I listen to books in Audible, helping me to effectively use the time when I am driving or walking. Another excellent book platform I have discovered is [Leanpub](https://leanpub.com/), a book publishing platform with an agile approach to writing books.
 
 ### Technology
+
+#### Architecture
+* [37 Things One Architect Knows About IT Transformation](https://leanpub.com/37things) by Gregor Hohpe
+* [Cloud Strategy - An Architecture Guide to Successful Cloud Migration](https://leanpub.com/cloudstrategy) by Gregor Hohpe
+
+#### DevOps
 * The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business by Gene Kim, Kevin Behr & George Spafford
 * The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations by Gene Kim, Patrick Debois, John Willis & Jez Humble
+
+
 * The Lean Startup: How Today’s Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses by Eric Ries
 * Site Reliability Engineering: How Google Runs Production Systems by Niall Murphy, Betsy Beyer, Chris Jones, Jennifer Petoff
 * Infrastructure as Code: Managing Servers in the Cloud by Kief Morris
