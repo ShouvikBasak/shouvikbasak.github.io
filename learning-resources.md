@@ -13,7 +13,7 @@ This document also lists some sites which I found useful for a quick reference. 
 
 
 #### Hands On Labs
-* [Qwiklabs](https://www.qwiklabs.com/). Hands on labs on GCP and AWS. This is not free upfront, however if you participate if GCP online events, you get credits for practising the labs. Once you are part of this ecosystem you would realize that you can get enough credits regularly to use the service at no cost. Qwiklabs is now owned by Google and Google provides all their trainings using this platform.
+* [Qwiklabs](https://www.qwiklabs.com/). Hands on labs on GCP and AWS. This is not free upfront, however when you participate in GCP online events, you get credits for practising the labs. Once you are part of this ecosystem you would realize that you can get enough credits regularly to use the service at no cost. Qwiklabs is now owned by Google and Google provides all their trainings using this platform.
 * [Katacoda](https://katacoda.com/). Various playgrounds are available to try your hand on and learn by doing. It has number of labs from Docker, Kubernetes, Serverless, Tensorflow and many more.
 
 
