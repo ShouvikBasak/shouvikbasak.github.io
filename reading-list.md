@@ -31,7 +31,7 @@ Some of my favourite books that I would recommend reading (or listening!). I lis
 * The Goal: A Process of Ongoing Improvement by Eliyahu M. Goldratt & Jeff Cox
 * The Brand You 50 by Tom Peters
 * Beyond Code: Learn to distinguish yourself in 9 simple steps! by Rajesh Setty
-* [Lead Quietly](http://www.leadquietly.com/) - Building a community of leaders who lead quietly with focus on community and collaboration, learning, vision, and balance. This is a blog by Don Frederiksen. I have found Don's writings resonating with my thoughts and the blog is immensely resourceful.
+* [Lead Quietly](http://www.leadquietly.com/) - Building a community of leaders who lead quietly with focus on community and collaboration, learning, vision, and balance. This is a blog by Don Frederiksen. I have found Don's writings resonating with my thoughts and the blog is immensely resourceful. The last post was few years back but the writings are of relevance today as well.
 
 ### Photography
 * The Photographer’s Mind by Michael Freeman
