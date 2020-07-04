@@ -4,17 +4,17 @@ title:  "How to choose your Cloud provider?"
 description: "Are you planning to migrate your on-premise workloads to the Cloud? Are you planning to build your startup in the Cloud and wondering which Cloud will be most appropriate? Well, choosing the Cloud provider is not an easy decision. Here I document the list of criteria that would help make the decision." 
 categories: [Cloud]
 tags: [cloud, aws, azure, gcp]
-date: 2020-07-04 07:55:09 +0530
+date: 2020-07-04 21:01:09 +0530
 ---
 When we need to migrate workloads to the Cloud or build a greenfield environment in the Cloud, a point of discussion that often comes up is which Cloud provider to choose? The decision is often straightforward for organizations that are already on a specific Cloud for the last several years, and have adopted a specific Cloud provider. For any new workload migration or to build Cloud Native Apps, for obvious reasons that specific Cloud provider is often the preferred one. Unless, there is a compelling reason to look at some specialized capability of another Cloud provider.
 
 However, there are many organizations today who have only moved a few workloads to the Cloud or none at all and plan to migrate their on-premise data center workloads in the next few years. For these organizations, it becomes critical to decide which Cloud provider to choose.
 
+![Choosing a Cloud provider]({{ "/assets/choose_cloud_provider.png" }})
+
 Choosing a Cloud provider is not easy. Also it is difficult to do an apple to apple comparison between the Cloud provider’s services. A holistic approach needs to be taken to identify the appropriate Cloud provider for an organization.
 
 The decision gets complex as the service offerings of the big three Cloud providers, Amazon Web Services, Microsoft Azure and Google Cloud Platform are comparable and constantly evolving. More importantly, the decision is just not about the service offerings of the Cloud providers but also to understand the internal business and technical requirements and also the challenges of the organization to move the workloads to the Cloud.
-
-![Choosing a Cloud provider]({{ "/assets/choose_cloud_provider.png" }})
 
 While Amazon was far ahead in its capabilities at the onset, Microsoft Azure picked up in a big way in the last few years and Google Cloud Platform has now become a definite option to consider. The service offerings and feature gaps between the Cloud providers are reducing. Organizations are also adopting Multi-Cloud strategy and Hybrid-Cloud strategy, including a set of workloads residing in the on-premise data centers and Private Clouds. Coexistence of workloads on-premise and in the Public Cloud brings in another set of challenges from an operational and management perspective.
 
