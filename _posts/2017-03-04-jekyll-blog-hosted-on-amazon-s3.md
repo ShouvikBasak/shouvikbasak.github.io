@@ -2,7 +2,7 @@
 layout: post
 title:  "Jekyll blog hosted on Amazon S3"
 description: "Using Jekyll to build a blog and host the static site on S3. All the steps required to create the Jekyll blog locally, configuring AWS and then pushing it to AWS S3 for hosting." 
-categories: [website]
+categories: [Website]
 tags: [jekyll, aws, github, markdown, s3, blog_platform]
 date:   2017-03-04 07:55:09 +0530
 ---

@@ -2,7 +2,7 @@
 layout: post
 title:  "How to choose your portfolio hosting website"
 description: "Where should I host my photography portfolio? We discuss here the principles on which you can make your decision and the areas to consider for selecting your portfolio hosting provider." 
-categories: [website]
+categories: [Website]
 tags: [photography]
 date:   2017-03-15 07:55:09 +0530
 ---
