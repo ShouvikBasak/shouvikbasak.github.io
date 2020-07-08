@@ -43,6 +43,7 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
+permalink: /:categories/:title/
 show_excerpts: true
 google_analytics: UA-3341548-13
 disqus:
