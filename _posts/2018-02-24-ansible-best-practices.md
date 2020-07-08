@@ -2,7 +2,7 @@
 layout: post
 title:  "Ansible best practices"
 description: "We review some best practices to consider while writing Ansible playbooks. This should be particularly useful for anyone starting with Ansible." 
-categories: [Ansible]
+categories: [software]
 tags: [cloud, automation]
 date:   2018-02-24 07:55:09 +0530
 ---
