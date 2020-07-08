@@ -11,10 +11,3 @@ title: Blog Posts
     {% endfor %}
   </ul>
 </div>
-
-<div id="home">
-
-{{ site.categories }}
-  
-</div>
-
