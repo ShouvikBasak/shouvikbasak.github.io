@@ -2,7 +2,7 @@
 layout: post
 title:  "Connecting to multiple AWS accounts using AWS CLI"
 description: "AWS CLI configuration steps to connect to multiple AWS accounts using different IAM users." 
-categories: [cloud]
+categories: [Cloud]
 tags: [aws, cloud]
 date:   2017-03-08 07:55:09 +0530
 ---

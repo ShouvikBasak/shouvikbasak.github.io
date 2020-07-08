@@ -2,7 +2,7 @@
 layout: post
 title:  "Eric S Raymond’s Unix Philosophy applied to design Cloud Architectures"
 description: "Eric Steven Raymond in his book, The Art of Unix Programming, wrote 17 rules of Unix philosophy. I find most of these rules very relevant for designing cloud architectures and has its application in the design thought process." 
-categories: [architecture]
+categories: [Architecture]
 tags: [cloud]
 date:   2017-03-14 07:55:09 +0530
 ---

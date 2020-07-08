@@ -2,7 +2,7 @@
 layout: post
 title:  "Ansible - getting started"
 description: "An introduction to using Ansible for automation. What is Ansible, what can be done with Ansible and some interesting points about Ansible" 
-categories: [software]
+categories: [Software]
 tags: [cloud, automation]
 date:   2017-11-12 07:55:09 +0530
 ---

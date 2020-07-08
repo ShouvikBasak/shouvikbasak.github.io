@@ -2,7 +2,7 @@
 layout: post
 title:  "Blockchain - the business game changer"
 description: "An introduction to blockchain with a high-level overview of how blockchain technology operates, and the implications of a secure, distributed ledger system." 
-categories: [architecture]
+categories: [Architecture]
 tags: [blockchain]
 date:   2018-06-08 07:55:09 +0530
 ---

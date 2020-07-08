@@ -2,7 +2,7 @@
 layout: post
 title:  "How to choose your Cloud provider?"
 description: "Are you planning to migrate your on-premise workloads to the Cloud? Are you planning to build your startup in the Cloud and wondering which Cloud will be most appropriate? Well, choosing the Cloud provider is not an easy decision. Here I document the list of criteria that would help make the decision." 
-categories: [cloud]
+categories: [Cloud]
 tags: [cloud, aws, azure, gcp]
 date: 2020-07-04 21:01:09 +0530
 ---
