@@ -1,32 +1,38 @@
 ---
 layout: post
-title:  "Kafka notes"
+title:  "Kafka - getting started"
 description: "Quick reference for getting started with Kafka" 
-categories: [Apache]
+categories: [Tools]
 tags: [Kafka, Apache Kafka]
 date: 2022-01-22 10:15:09 +0530
 ---
 
-Getting started => [Kafka Quick Start](https://kafka.apache.org/quickstart)
+Quick notes and reference commands to get started with Kafka on a local machine.
+
+Getting started => [Apache Kafka Quick Start](https://kafka.apache.org/quickstart)
+
+**Important files:**
+* `config/zookeeper.properties`
+* `config/server.properties`
 
 **Quick commands:**
 
 Start Kafka:
 
-`$ bin/zookeeper-server-start.sh config/zookeeper.properties`
-
-`$ bin/kafka-server-start.sh config/server.properties`
+* Start zookeeper server first: `$ bin/zookeeper-server-start.sh config/zookeeper.properties`
+* Start Kafka server next: `$ bin/kafka-server-start.sh config/server.properties`
 
 Create a topic:
 
-`$ bin/kafka-topics.sh --create --partitions 1 --replication-factor 1 --topic quickstart-events --bootstrap-server localhost:9092`
+Topic name: mytopic1
+Number of partitions of the topic: 3
+Replication Factor: 1
+
+`$ bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic mytopic1 --partitions 3 --replication-factor 1`
 
 Note: 
-* In Kafka 3.0.0 `–bootstrap-server localhost:9092` has replaced `–zookeeper localhost:2181`
-
-* this won't work: `$ bin/kafka-topics.sh --zookeeper localhost:2181 --create --topic first_topic --replication-factor 1 --partitions 3` 
-
-* instead use: `$ bin/kafka-topics.sh --create --topic first_topic --replication-factor 1 --partitions 3 --bootstrap-server localhost:9092`
+* In Kafka 3.0.0 `bootstrap-server localhost:9092` has replaced `zookeeper localhost:2181` for the command syntax. Hence, this won't work: `$ bin/kafka-topics.sh --zookeeper localhost:2181 --create --topic mytopic1 --partitions 3 --replication-factor 1`
+* Kafka bootstrap-server runs on port 9092 by default
 
 List topics:
 
@@ -34,26 +40,30 @@ List topics:
 
 View topic details:
 
-`$ bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092`
+`$ bin/kafka-topics.sh --describe --topic mytopic1 --bootstrap-server localhost:9092`
 
+![](2022-01-21-12-56-51.png)
 
 Write events into the topic:
 
-`$ bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092`
+`$ bin/kafka-console-producer.sh --topic mytopic1 --bootstrap-server localhost:9092`
 
 Read the events:
 
-`$ bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092` (read all events from beginning)
+`$ bin/kafka-console-consumer.sh --topic mytopic1 --bootstrap-server localhost:9092` (read current incoming events but not from beginning of the queue)
 
-`$ bin/kafka-console-consumer.sh --topic quickstart-events --bootstrap-server localhost:9092` (read incoming events but not from beginning)
+`$ bin/kafka-console-consumer.sh --topic mytopic1 --from-beginning --bootstrap-server localhost:9092` (read all events from beginning of the queue)
+
 
 To delete a topic:
 
-`$ bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic first_topic`
+`$ bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic mytopic1`
 
 To delete any data of local Kafka environment including any events:
 
 `$ rm -rf /tmp/kafka-logs /tmp/zookeeper`
+
+
 
 
 
