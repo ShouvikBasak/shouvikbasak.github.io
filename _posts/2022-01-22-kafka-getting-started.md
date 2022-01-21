@@ -59,6 +59,30 @@ To delete any data of local Kafka environment including any events:
 
 `$ rm -rf /tmp/kafka-logs /tmp/zookeeper`
 
+To stop Kaka:
+`$ bin/kafka-server-stop.sh`
+`$ bin/zookeeper-server-stop.sh`
+
+
+Kafka core APIs:
+
+* **Producer API:** For an application to publish a stream of records to one or more Kafka topics.
+* **Consumer API:** For an application to subscribe to one or more topics.
+* **Streams API:** For an application to act as a *stream processor*. 
+    * Consumes from an input stream from one or more topics.
+    * Produces an output stream to one or more output topics.
+    * Helps to transform input streams to output streams.
+* **Connector API:** For connecting Kafka topics to existing applications.
+
+Installing kafka-python: `pip install kafka-python`
+
+
+
+
+
+
+
+
 
 
 
