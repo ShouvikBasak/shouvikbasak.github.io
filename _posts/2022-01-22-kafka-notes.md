@@ -9,7 +9,7 @@ date: 2022-01-22 10:15:09 +0530
 
 Kafka Quick Start: https://kafka.apache.org/quickstart
 
-## Quick commands:
+**Quick commands:**
 
 Start Kafka:
 
