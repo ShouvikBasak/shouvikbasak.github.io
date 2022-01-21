@@ -59,8 +59,10 @@ To delete any data of local Kafka environment including any events:
 
 `$ rm -rf /tmp/kafka-logs /tmp/zookeeper`
 
-To stop Kaka:
+To stop Kafka:
+
 `$ bin/kafka-server-stop.sh`
+
 `$ bin/zookeeper-server-stop.sh`
 
 
