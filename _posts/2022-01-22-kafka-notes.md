@@ -24,9 +24,7 @@ Start Kafka:
 
 Create a topic:
 
-Topic name: mytopic1
-Number of partitions of the topic: 3
-Replication Factor: 1
+Topic name: mytopic1, Number of partitions of the topic: 3, Replication Factor: 1
 
 `$ bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic mytopic1 --partitions 3 --replication-factor 1`
 
@@ -41,8 +39,6 @@ List topics:
 View topic details:
 
 `$ bin/kafka-topics.sh --describe --topic mytopic1 --bootstrap-server localhost:9092`
-
-![](2022-01-21-12-56-51.png)
 
 Write events into the topic:
 
