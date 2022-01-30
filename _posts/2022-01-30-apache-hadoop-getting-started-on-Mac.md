@@ -108,7 +108,7 @@ Run a sample MapReduce job (using the getting started guide)
 
 `$ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.1.jar grep input output 'dfs[a-z.]+'` (run the job)
 
-`$ bin/hdfs dfs -cat output/*` (check the output of the job)
+`$ bin/hdfs dfs -cat output/<output_file_name>` (check the output of the job)
 
 `$ bin/hdfs dfs -get output output` (to copy the file from HDFS to local file system)
 
