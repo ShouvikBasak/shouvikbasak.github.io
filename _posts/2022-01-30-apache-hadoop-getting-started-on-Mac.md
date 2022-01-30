@@ -11,7 +11,13 @@ Quick reference for getting started with Apache Hadoop on a Mac.
 
 **Pre-requisites:**
 
-* `$ssh localhost` should work without a passphrase
+* `$ssh localhost` should work without a passphrase. If it does not work follow the below steps.
+
+```
+  $ ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+  $ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+  $ chmod 0600 ~/.ssh/authorized_keys
+```
 * Java should be installed
     * Install Java on Mac: [https://www.java.com/en/download/help/mac_install.html](https://www.java.com/en/download/help/mac_install.html)
     * finding JAVA_HOME: `$java -XshowSettings:properties -version`
