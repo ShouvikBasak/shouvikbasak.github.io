@@ -43,9 +43,9 @@ Download Hadoop from here: [https://www.apache.org/dyn/closer.cgi/hadoop/common/
 
 Install Hadoop: `$tar -xvzf hadoop-3.3.1.tar.gz`
 
-Installation / Extraction directory: `/Users/shouvik/opt/kafka_2.13-3.0.0`
+Installation / Extraction directory: `/Users/shouvik/opt/hadoop-3.3.1`
 
-Below commands are executed from the location: `/Users/shouvik/opt/kafka_2.13-3.0.0`
+Below commands are executed from the location: `/Users/shouvik/opt/hadoop-3.3.1`
 
 Verify Hadoop has been installed properly `$ bin/hadoop`
 
@@ -102,11 +102,17 @@ All MapReduce files will be available under `/user/shouvik` in HDFS
 
 Run a sample MapReduce job (using the getting started guide)
 
-`$ bin/hdfs dfs -mkdir input`
+`$ bin/hdfs dfs -mkdir input` (make a directory)
+
+`$ bin/hdfs dfs -ls` (to check the listings in home directory)
+`$ bin/hdfs dfs -ls /` (to check the listings from root)
+
 
 `$ bin/hdfs dfs -put etc/hadoop/*.xml input` (copy from local file system to HDFS)
 
 `$ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.1.jar grep input output 'dfs[a-z.]+'` (run the job)
+
+`$ bin/hdfs dfs -ls output` (check the output file name)
 
 `$ bin/hdfs dfs -cat output/<output_file_name>` (check the output of the job)
 
@@ -117,7 +123,7 @@ Run a sample MapReduce job (using the getting started guide)
 
 * To check the running processes :
 
-`$jps`
+`$ jps`
 ```
 23105 NameNode
 23205 DataNode
