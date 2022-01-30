@@ -7,12 +7,14 @@ tags: [Hadoop, Apache Hadoop, Install Hadoop on a Mac]
 date: 2022-01-30 15:39:09 +0530
 ---
 
-Pre-requisite: 
+Quick reference for getting started with Apache Hadoop on a Mac.
+
+**Pre-requisites:**
 
 * `$ssh localhost` should work without a passphrase
 * Java should be installed
-* Install Java on Mac: [https://www.java.com/en/download/help/mac_install.html](https://www.java.com/en/download/help/mac_install.html)
-* finding JAVA_HOME: `$java -XshowSettings:properties -version`
+    * Install Java on Mac: [https://www.java.com/en/download/help/mac_install.html](https://www.java.com/en/download/help/mac_install.html)
+    * finding JAVA_HOME: `$java -XshowSettings:properties -version`
 
 ```
 ...
@@ -28,26 +30,28 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.121-b13, mixed mode)
 
 ```
 export PATH="$PATH:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/bin"
-export JAVA_HOME="/Library/Java/JavaV`irtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre"
 ```
 
 
 Reference document: [https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html)
+
+**Installation and Configuration:**
 
 
 Download Hadoop from here: [https://www.apache.org/dyn/closer.cgi/hadoop/common/](https://www.apache.org/dyn/closer.cgi/hadoop/common/)
 
 Install Hadoop: `$tar -xvzf hadoop-3.3.1.tar.gz`
 
-Installation/ Extraction directory: `/Users/shouvik/opt/kafka_2.13-3.0.0`
+Installation / Extraction directory: `/Users/shouvik/opt/kafka_2.13-3.0.0`
 
-Below commands are executed from the location (`pwd`)  `/Users/shouvik/opt/kafka_2.13-3.0.0`
+Below commands are executed from the location: `/Users/shouvik/opt/kafka_2.13-3.0.0`
 
 Verify Hadoop has been installed properly `$ bin/hadoop`
 
-** Test for Standalone Operation **
+**Test for Standalone Operation:**
 
-(Follow the steps in the reference document)
+(Following the steps in the reference document)
 
 ```
   $ mkdir input
@@ -55,7 +59,7 @@ Verify Hadoop has been installed properly `$ bin/hadoop`
   $ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.1.jar grep input output 'dfs[a-z.]+'
   $ cat output/*
   ```
-** Configure for Pseudo-Distributed Operation **
+**Configure for Pseudo-Distributed Operation:**
 * Update `etc/hadoop/core-site.xml`
 
 ```
@@ -94,13 +98,13 @@ Verify Hadoop has been installed properly `$ bin/hadoop`
 
 `$ bin/hdfs dfs -mkdir /user/shouvik`
 
-All MapReduce files will be available under /user/shouvik
+All MapReduce files will be available under `/user/shouvik` in HDFS
 
 Run a sample MapReduce job (using the getting started guide)
 
 `$ bin/hdfs dfs -mkdir input`
 
-`$ bin/hdfs dfs -put etc/hadoop/*.xml input` (copy from local file system to HDFS filesystem)
+`$ bin/hdfs dfs -put etc/hadoop/*.xml input` (copy from local file system to HDFS)
 
 `$ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.1.jar grep input output 'dfs[a-z.]+'` (run the job)
 
@@ -111,6 +115,8 @@ Run a sample MapReduce job (using the getting started guide)
 
 **Some useful notes:**
 
+* To check the running processes :
+
 `$jps`
 ```
 23105 NameNode
@@ -118,6 +124,8 @@ Run a sample MapReduce job (using the getting started guide)
 23339 SecondaryNameNode
 32126 Jps
 ```
+
+* YARN need not be configured for running the MapReduce jobs
 
 
 
