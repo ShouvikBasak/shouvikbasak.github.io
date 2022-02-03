@@ -125,9 +125,10 @@ Run a sample MapReduce job (using the getting started guide)
 `$ bin/hdfs dfs -get output output` (to copy the file from HDFS to local file system)
 
 
-**Some useful notes:**
+**Some useful notes and commands:**
+* YARN need not be configured for running the MapReduce jobs
 
-* To check the running processes :
+* To check the running processes:
 
 `$ jps`
 ```
@@ -136,8 +137,24 @@ Run a sample MapReduce job (using the getting started guide)
 23339 SecondaryNameNode
 32126 Jps
 ```
+* Some handy commands:
+`$ hdfs dfs -put file.txt mydata/myfolder` (transfer a file to HDFS)
+`$ hdfs dfs -rm mydata/myfolder/file.txt` (delete a file in HDFS)
+`$ hdfs dfs -cat mydata/myfolder/file.txt` (read a file in HDFS)
+`$ hdfs dfs -copyFromLocal file.txt mydata/myfolder/file.txt` (copy a file from local file ystem to HDFS)
+`$ hdfs dfs -copyToLocal mydata/myfolder/file.txt .` (copy a file from HDFS to local filesytem)
 
-* YARN need not be configured for running the MapReduce jobs
+* HDFS Command Guide: (https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html)[https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html]
+
+* Hadoop Streaming Guide: (https://hadoop.apache.org/docs/r1.2.1/streaming.html)[https://hadoop.apache.org/docs/r1.2.1/streaming.html]
+    * Used for running non-java code for MapReduce programs like Python. Use the following command:
+    
+
+
+
+
+
+
 
 
 
