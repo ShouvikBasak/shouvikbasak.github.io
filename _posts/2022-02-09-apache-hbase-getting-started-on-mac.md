@@ -97,6 +97,102 @@ Works!!
 
 **Exploring the HBase shell commands:**
 
+Quick commands to get started from the reference guide.
+
+Create table - must provide one column family along with table name
+
+hbase:003:0> `create 'test', 'cf'`
+
+    Created table test
+    Took 1.2568 seconds                                                                                                          
+    => Hbase::Table - test
+    hbase:004:0> list 'test'
+    TABLE                                                                                                                        
+    test                                                                                                                         
+    1 row(s)
+    Took 0.0358 seconds                                                                                                          
+    => ["test"]
+
+hbase:005:0> `describe 'test'`
+    Table test is ENABLED                                                                                                        
+    test                                                                                                                         
+    COLUMN FAMILIES DESCRIPTION                                                                                                  
+    {NAME => 'cf', BLOOMFILTER => 'ROW', IN_MEMORY => 'false', VERSIONS => '1', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODIN
+    G => 'NONE', COMPRESSION => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', BLOCKCACHE => 'true', BLOCKSIZE => '65536', REPLIC
+    ATION_SCOPE => '0'}                                                                                                          
+
+    1 row(s)
+    Quota is disabled
+    Took 0.1286 seconds                                                                                                          
+    hbase:006:0> put 'test', 'row1', 'cf:a', 'value1'
+    Took 0.1017 seconds                                                                                                          
+    hbase:007:0> put 'test', 'row2', 'cf:b', 'value2'
+    Took 0.0069 seconds                                                                                                          
+    hbase:008:0> put 'test', 'row3', 'cf:c', 'value3'
+    Took 0.0150 seconds                                                                                                          
+
+
+hbase:009:0> `scan 'test'`
+    ROW                              COLUMN+CELL                                                                                 
+    row1                            column=cf:a, timestamp=2022-02-09T15:53:39.281, value=value1                                
+    row2                            column=cf:b, timestamp=2022-02-09T15:54:02.022, value=value2                                
+    row3                            column=cf:c, timestamp=2022-02-09T15:54:14.169, value=value3                                
+    3 row(s)
+    Took 0.0546 seconds                                                                                                          
+    hbase:010:0> get 'test', 'row1'
+    COLUMN                           CELL                                                                                        
+    cf:a                            timestamp=2022-02-09T15:53:39.281, value=value1                                             
+    1 row(s)
+    Took 0.0136 seconds                                                                                                          
+
+hbase:011:0> `disable 'test'`
+Took 0.3587 seconds                                                                                                          
+
+hbase:012:0> `list 'test'`
+TABLE                                                                                                                        
+test                                                                                                                         
+1 row(s)
+Took 0.0049 seconds                                                                                                          
+=> ["test"]
+
+hbase:013:0> `put 'test', 'row4', 'cf:d', 'value4'`
+
+    ERROR: Table test is disabled!
+
+    For usage try 'help "put"'
+
+    Took 0.4446 seconds                                                                                                          
+
+hbase:014:0> `enable 'test'`
+    Took 0.6702 seconds                                                                                                          
+    hbase:015:0> put 'test', 'row4', 'cf:d', 'value4'
+    Took 0.0094 seconds                                                                                                          
+    hbase:016:0> scan 'test'
+    ROW                              COLUMN+CELL                                                                                 
+    row1                            column=cf:a, timestamp=2022-02-09T15:53:39.281, value=value1                                
+    row2                            column=cf:b, timestamp=2022-02-09T15:54:02.022, value=value2                                
+    row3                            column=cf:c, timestamp=2022-02-09T15:54:14.169, value=value3                                
+    row4                            column=cf:d, timestamp=2022-02-09T15:56:33.403, value=value4                                
+    4 row(s)
+    Took 0.0160 seconds                                                                                                          
+
+hbase:017:0> `disable 'test'`
+    Took 0.3560 seconds                                                                                                          
+    hbase:018:0> drop test
+    Traceback (most recent call last):
+    ArgumentError (wrong number of arguments (given 0, expected 2..3))
+
+hbase:019:0> `drop 'test'`
+Took 0.1380 seconds                                                                                                          
+
+hbase:020:0> `list`
+    TABLE                                                                                                                        
+    0 row(s)
+    Took 0.0116 seconds                                                                                                          
+    => []
+
+
+
 
 
 
