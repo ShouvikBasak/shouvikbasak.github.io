@@ -9,7 +9,7 @@ date: 2022-02-09 08:15:09 +0530
 
 Quick reference for a Standalone HBase installation on a Mac.
 
-Apache HBase Reference Guide: [https://hbase.apache.org/book.html]
+Apache HBase Reference Guide: [https://hbase.apache.org/book.html](https://hbase.apache.org/book.html)
 
 A standalone instance of HBase has all the HBase daemons included:
 * Master
@@ -21,7 +21,7 @@ All the 3 daemons run in a single JVM persisting to the local filesystem.
 **Prerequisite:** JDK needs to be installed
 
 **Download Apache HBase:**
-[https://hbase.apache.org/downloads.html] => (download the bin for the stable version) = > download from [https://www.apache.org/dyn/closer.lua/hbase/2.4.9/hbase-2.4.9-bin.tar.gz]
+[https://hbase.apache.org/downloads.html](https://hbase.apache.org/downloads.html) => (download the bin for the stable version) = > download from [https://www.apache.org/dyn/closer.lua/hbase/2.4.9/hbase-2.4.9-bin.tar.gz](https://www.apache.org/dyn/closer.lua/hbase/2.4.9/hbase-2.4.9-bin.tar.gz)
 
 **Extract and install:** `tar -xvzf hbase-2.4.9-bin.tar.gz`
 
