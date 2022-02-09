@@ -96,6 +96,13 @@ Verify Hadoop has been installed properly `$ bin/hadoop`
 
 `$ sbin/start-dfs.sh`
 
+`$ jps`
+
+    3075 DataNode
+    2964 NameNode
+    3303 Jps
+    3214 SecondaryNameNode
+
 * Check in browser whether `http://localhost:9870/` is accessible. This is the Namenode view.
 
 * Create HDFS directories

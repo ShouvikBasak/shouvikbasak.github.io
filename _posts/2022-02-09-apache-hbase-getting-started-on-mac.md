@@ -126,11 +126,14 @@ hbase:005:0> `describe 'test'`
     1 row(s)
     Quota is disabled
     Took 0.1286 seconds                                                                                                          
-    hbase:006:0> put 'test', 'row1', 'cf:a', 'value1'
+hbase:006:0> `put 'test', 'row1', 'cf:a', 'value1'`
+
     Took 0.1017 seconds                                                                                                          
-    hbase:007:0> put 'test', 'row2', 'cf:b', 'value2'
+hbase:007:0> `put 'test', 'row2', 'cf:b', 'value2'`
+
     Took 0.0069 seconds                                                                                                          
-    hbase:008:0> put 'test', 'row3', 'cf:c', 'value3'
+hbase:008:0> `put 'test', 'row3', 'cf:c', 'value3'`
+
     Took 0.0150 seconds                                                                                                          
 
 
@@ -276,14 +279,12 @@ Verify [http://localhost:9870/dfshealth.html#tab-overview](http://localhost:9870
 
 `jps`
 
-    91968 HQuorumPeer
-    92208 Jps
-    91715 SecondaryNameNode
-    92132 HRegionServer
-    91574 DataNode
-    91470 NameNode
+    3075 DataNode
+    2964 NameNode
+    4134 Jps
+    3214 SecondaryNameNode
 
-jps command should show the HMaster and HRegionServer processes running. HMaster was not running
+jps command should show the HMaster processes running. HMaster was not running
 
 Solution:
 
@@ -297,15 +298,65 @@ Cleaned up Hadoop configuration - stopped dfs, deleted /tmp/hadoop-dir, name nod
 
 `jps`
 
-    4017 SecondaryNameNode
-    4482 HRegionServer
-    4388 HMaster
-    3879 DataNode
-    4312 HQuorumPeer
-    4541 Jps
-    3773 NameNode
+    3075 DataNode
+    2964 NameNode
+    4084 HMaster
+    4134 Jps
+    3214 SecondaryNameNode
 
-HMaster and HRegionServer processes are both running after the cleanup
+HMaster process running after the cleanup.
+
+**Exploring HBase and data directories**
+
+`bin/hdfs dfs -ls /`
+
+    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:08 /hbase
+
+`hbase shell`
+
+hbase:001:0> `create 'test', 'cf'`
+
+    Created table test
+    Took 1.9204 seconds                                                                                                          
+    => Hbase::Table - test
+
+hbase:002:0> `put 'test', 'row1', 'cf:a', 'value1'`
+hbase:003:0> `put 'test', 'row2', 'cf:b', 'value2'`
+hbase:004:0> `put 'test', 'row3', 'cf:c', 'value3'`
+
+hbase:007:0> `scan 'test'`
+
+    ROW                              COLUMN+CELL                                                                                 
+    row1                            column=cf:a, timestamp=2022-02-09T21:24:50.673, value=value1                                
+    row2                            column=cf:b, timestamp=2022-02-09T21:24:58.527, value=value2                                
+    row3                            column=cf:c, timestamp=2022-02-09T21:25:04.519, value=value3                                
+    3 row(s)
+    Took 0.0625 seconds    
+
+Following directories were created after table creation. This confirms that HBase is using the HDFS file system
+
+`bin/hadoop fs -ls /hbase`
+
+    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:08 /hbase/.hbck
+    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:09 /hbase/.tmp
+    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:08 /hbase/MasterData
+    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:08 /hbase/WALs
+    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:08 /hbase/archive
+    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:08 /hbase/corrupt
+    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:09 /hbase/data
+    -rw-r--r--   3 shouvik supergroup         42 2022-02-09 21:08 /hbase/hbase.id
+    -rw-r--r--   3 shouvik supergroup          7 2022-02-09 21:08 /hbase/hbase.version
+    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:08 /hbase/mobdir
+    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:08 /hbase/oldWALs
+    drwx--x--x   - shouvik supergroup          0 2022-02-09 21:08 /hbase/staging
+
+
+
+
+
+
+
+
 
 
 
