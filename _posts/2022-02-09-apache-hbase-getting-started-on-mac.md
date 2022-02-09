@@ -88,7 +88,6 @@ HBase Web UI: http://localhost:16010 is now accessible => http://localhost:16010
 Run HBase shell: 
 `hbase shell`
 
-
     Version 2.4.9, ........
     Took 0.0031 seconds                                                                                                          
     hbase:001:0> 
@@ -114,6 +113,7 @@ hbase:003:0> `create 'test', 'cf'`
     => ["test"]
 
 hbase:005:0> `describe 'test'`
+
     Table test is ENABLED                                                                                                        
     test                                                                                                                         
     COLUMN FAMILIES DESCRIPTION                                                                                                  
@@ -133,6 +133,7 @@ hbase:005:0> `describe 'test'`
 
 
 hbase:009:0> `scan 'test'`
+
     ROW                              COLUMN+CELL                                                                                 
     row1                            column=cf:a, timestamp=2022-02-09T15:53:39.281, value=value1                                
     row2                            column=cf:b, timestamp=2022-02-09T15:54:02.022, value=value2                                
@@ -146,14 +147,16 @@ hbase:009:0> `scan 'test'`
     Took 0.0136 seconds                                                                                                          
 
 hbase:011:0> `disable 'test'`
-Took 0.3587 seconds                                                                                                          
+
+    Took 0.3587 seconds                                                                                                          
 
 hbase:012:0> `list 'test'`
-TABLE                                                                                                                        
-test                                                                                                                         
-1 row(s)
-Took 0.0049 seconds                                                                                                          
-=> ["test"]
+
+    TABLE                                                                                                                        
+    test                                                                                                                         
+    1 row(s)
+    Took 0.0049 seconds                                                                                                          
+    => ["test"]
 
 hbase:013:0> `put 'test', 'row4', 'cf:d', 'value4'`
 
@@ -164,6 +167,7 @@ hbase:013:0> `put 'test', 'row4', 'cf:d', 'value4'`
     Took 0.4446 seconds                                                                                                          
 
 hbase:014:0> `enable 'test'`
+
     Took 0.6702 seconds                                                                                                          
     hbase:015:0> put 'test', 'row4', 'cf:d', 'value4'
     Took 0.0094 seconds                                                                                                          
@@ -177,15 +181,18 @@ hbase:014:0> `enable 'test'`
     Took 0.0160 seconds                                                                                                          
 
 hbase:017:0> `disable 'test'`
+
     Took 0.3560 seconds                                                                                                          
     hbase:018:0> drop test
     Traceback (most recent call last):
     ArgumentError (wrong number of arguments (given 0, expected 2..3))
 
 hbase:019:0> `drop 'test'`
-Took 0.1380 seconds                                                                                                          
+
+    Took 0.1380 seconds                                                                                                          
 
 hbase:020:0> `list`
+
     TABLE                                                                                                                        
     0 row(s)
     Took 0.0116 seconds                                                                                                          
