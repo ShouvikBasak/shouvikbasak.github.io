@@ -212,7 +212,7 @@ Check `jps` to check nothing is running. Stop HBase if running.
 
 `stop-hbase.sh`
 
-`stopping hbase..............
+    stopping hbase..............
 
 `jps`
 
@@ -321,7 +321,9 @@ hbase:001:0> `create 'test', 'cf'`
     => Hbase::Table - test
 
 hbase:002:0> `put 'test', 'row1', 'cf:a', 'value1'`
+
 hbase:003:0> `put 'test', 'row2', 'cf:b', 'value2'`
+
 hbase:004:0> `put 'test', 'row3', 'cf:c', 'value3'`
 
 hbase:007:0> `scan 'test'`
