@@ -11,19 +11,21 @@ Quick reference for a Standalone HBase installation on a Mac.
 
 Apache HBase Reference Guide: [https://hbase.apache.org/book.html](https://hbase.apache.org/book.html)
 
-A standalone instance of HBase has all the HBase daemons included:
-* Master
-* RegionServers
-* ZooKeeper 
-
-All the 3 daemons run in a single JVM persisting to the local filesystem.
-
 **Prerequisite:** JDK needs to be installed
 
 **Download Apache HBase:**
 [https://hbase.apache.org/downloads.html](https://hbase.apache.org/downloads.html) => (download the bin for the stable version) = > download from [https://www.apache.org/dyn/closer.lua/hbase/2.4.9/hbase-2.4.9-bin.tar.gz](https://www.apache.org/dyn/closer.lua/hbase/2.4.9/hbase-2.4.9-bin.tar.gz)
 
 **Extract and install:** `tar -xvzf hbase-2.4.9-bin.tar.gz`
+
+## Standalone mode using local filesystem
+
+A standalone instance of HBase has all the HBase daemons included:
+* Master
+* RegionServers
+* ZooKeeper 
+
+All the 3 daemons run in a single JVM persisting to the local filesystem.
 
 **Configure:**
 
@@ -197,6 +199,135 @@ hbase:020:0> `list`
     0 row(s)
     Took 0.0116 seconds                                                                                                          
     => []
+
+
+## Standalone mode with HBase over HDFS
+
+**To run in standalone mode and use HDFS instead of local filesystem**
+
+Check `jps` to check nothing is running. Stop HBase if running.
+
+`stop-hbase.sh`
+
+`stopping hbase..............
+
+`jps`
+
+    86473 Jps
+
+To configure this standalone variant, edit your hbase-site.xml setting hbase.rootdir to point at a directory in your HDFS instance but then set hbase.cluster.distributed to false. 
+
+Update `conf/hbase-site.xml`
+
+    <property>
+        <name>hbase.cluster.distributed</name>
+        <value>false</value>
+    </property>
+
+    <property>
+        <name>hbase.rootdir</name>
+        <value>hdfs://localhost:9000/hbase</value>
+    </property>
+
+    # Remove existing configuration for hbase.tmp.dir and hbase.unsafe.stream.capability.enforce  
+
+    <property>
+        <name>hbase.tmp.dir</name>
+        <value>./tmp</value>
+    </property>
+    
+    <property>
+        <name>hbase.unsafe.stream.capability.enforce</name>
+        <value>false</value>
+    </property>
+
+
+**Start Hadoop**
+
+`sbin/start-dfs.sh`
+
+    Starting namenodes on [localhost]
+    Starting datanodes
+    Starting secondary namenodes [Shouviks-MacBook-Pro.local]
+
+`jps`
+
+    87649 NameNode
+    87761 DataNode
+    87991 Jps
+    87898 SecondaryNameNode
+
+Verify [http://localhost:9870/dfshealth.html#tab-overview](http://localhost:9870/dfshealth.html#tab-overview)
+
+**Start HBase**
+
+`bin/start-hbase.sh`
+
+    The authenticity of host '127.0.0.1 (127.0.0.1)' can't be established.
+    ECDSA key fingerprint is SHA256:.....
+    Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+    Please type 'yes', 'no' or the fingerprint: yes
+    127.0.0.1: Warning: Permanently added '127.0.0.1' (ECDSA) to the list of known hosts.
+    127.0.0.1: running zookeeper, logging to /..../opt/hbase-2.4.9/bin/../logs/hbase-shouvik-zookeeper-....local.out
+    running master, logging to /..../opt/hbase-2.4.9/bin/../logs/hbase-shouvik-master-....local.out
+    : running regionserver, logging to /..../opt/hbase-2.4.9/bin/../logs/hbase-shouvik-....local.out
+
+**Issue faced:**
+
+`jps`
+
+    91968 HQuorumPeer
+    92208 Jps
+    91715 SecondaryNameNode
+    92132 HRegionServer
+    91574 DataNode
+    91470 NameNode
+
+jps command should show the HMaster and HRegionServer processes running. HMaster was not running
+
+Solution:
+
+Cleaned up Hadoop configuration - stopped dfs, deleted /tmp/hadoop-dir, name node format, start hadoop
+
+`bin/start-hbase.sh`
+
+    127.0.0.1: running zookeeper, logging to /..../opt/hbase-2.4.9/bin/../logs/hbase-shouvik-zookeeper-.....local.out
+    running master, logging to /..../opt/hbase-2.4.9/bin/../logs/hbase-shouvik-master-.....local.out
+    : running regionserver, logging to /..../opt/hbase-2.4.9/bin/../logs/hbase-shouvik-regionserver-......local.out
+
+`jps`
+
+    4017 SecondaryNameNode
+    4482 HRegionServer
+    4388 HMaster
+    3879 DataNode
+    4312 HQuorumPeer
+    4541 Jps
+    3773 NameNode
+
+HMaster and HRegionServer processes are both running after the cleanup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
