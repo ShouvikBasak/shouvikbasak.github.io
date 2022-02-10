@@ -71,12 +71,59 @@ Quick reference for running Apache Spark on Mac.
 
   `bin/spark-submit examples/src/main/python/pi.py 10`
 
+### Launching Spark Cluster in Standalone Deploy Mode
 
+* Start Standalone Master: `$ sbin/start-master.sh`
 
+  % sbin/start-master.sh
+  starting org.apache.spark.deploy.master.Master, logging to /Users/shouvik/opt/spark-3.2.1-bin-hadoop3.2/logs/spark-shouvik-org.apache.spark.deploy.master.Master-1-Shouviks-MacBook-Pro.local.out
 
+  - Check log file: `/Users/shouvik/opt/spark-3.2.1-bin-hadoop3.2/logs/spark-shouvik-org.apache.spark.deploy.master.Master-1-Shouviks-MacBook-Pro.local.out` and note the following
 
+    INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+    INFO Master: Starting Spark master at spark://Shouviks-MacBook-Pro.local:7077
+    INFO Master: Running Spark version 3.2.1
+    INFO Utils: Successfully started service 'MasterUI' on port 8080.
+    INFO MasterWebUI: Bound MasterWebUI to 0.0.0.0, and started at http://192.168.29.131:8080
+    INFO Master: I have been elected leader! New state: ALIVE
 
+* Master Web UI: `http://localhost:8080` (default)
 
+* From the Master Web UI note the `master-spark-URL` required for starting `Worker instances` for :spark://Shouviks-MacBook-Pro.local:7077
+
+* Start one or more Workers: `sbin/start-worker.sh <master-spark-URL>`
+  - Get the `<master-spark-URL>` from the information provided when starting the Master or from the Master Web UI
+
+    `$ sbin/start-worker.sh spark://Shouviks-MacBook-Pro.local:7077`
+    starting org.apache.spark.deploy.worker.Worker, logging to /Users/shouvik/opt/spark-3.2.1-bin-hadoop3.2/logs/spark-shouvik-org.apache.spark.deploy.worker.Worker-1-Shouviks-MacBook-Pro.local.out
+
+  - Check the log `/Users/shouvik/opt/spark-3.2.1-bin-hadoop3.2/logs/spark-shouvik-org.apache.spark.deploy.worker.Worker-1-Shouviks-MacBook-Pro.local.out`
+
+    INFO Utils: Successfully started service 'sparkWorker' on port 51194.
+    INFO Worker: Starting Spark worker 192.168.29.131:51194 with 4 cores, 7.0 GiB RAM
+    INFO Worker: Running Spark version 3.2.1
+    INFO Worker: Spark home: /Users/shouvik/opt/spark-3.2.1-bin-hadoop3.2
+    INFO Utils: Successfully started service 'WorkerUI' on port 8081.
+    INFO WorkerWebUI: Bound WorkerWebUI to 0.0.0.0, and started at http://192.168.29.131:8081
+    INFO Worker: Connecting to master Shouviks-MacBook-Pro.local:7077...
+    INFO TransportClientFactory: Successfully created connection to Shouviks-MacBook-Pro.local/127.0.0.1:7077 after 56 ms (0 ms spent in bootstraps)
+    INFO Worker: Successfully registered with master spark://Shouviks-MacBook-Pro.local:7077
+
+  - Check the Worker Web UI: `http://192.168.29.131:8081`
+  - Verify the Master Web UI: Worker instance should be listed in `Workers`
+
+* Note:
+  - `conf/workers` needs to be created in Spark directory containing the host names of all the Spark worker nodes.
+  - If `conf/workers` does not exist, the launch scripts defaults to a single machine (localhost).
+  - Master machine accesses each of the worker machines via ssh. Hence communication between teh Master and Worker nodes should work password-less SSH configuration.
+
+* Quick set of commands:
+  - Start a Master: `sbin/start-master.sh`
+  - Start a Worker instance: `sbin/start-worker.sh`
+  - Stop a Master: `sbin/stop-master.sh`
+  - Stop all Worker instances: `sbin/stop-worker.sh`
+
+* Reference guide for running Spark in Standalone Mode: [https://spark.apache.org/docs/latest/spark-standalone.html](https://spark.apache.org/docs/latest/spark-standalone.html)
 
 
 
