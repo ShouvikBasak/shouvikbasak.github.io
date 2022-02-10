@@ -51,10 +51,10 @@ Quick reference for running Apache Spark on Mac.
   ...
   ...
   Welcome to
-        ____              __
-      / __/__  ___ _____/ /__
-      _\ \/ _ \/ _ `/ __/  '_/
-    /__ / .__/\_,_/_/ /_/\_\   version 3.2.1
+        ____              __ \
+      / __/__  ___ _____/ /__ \
+      _\ \/ _ \/ _ `/ __/  '_/ \
+    /__ / .__/\_,_/_/ /_/\_\   version 3.2.1 \
         /_/
 
   Using Python version 3.7.7 (default, Mar 23 2020 17:31:31)
