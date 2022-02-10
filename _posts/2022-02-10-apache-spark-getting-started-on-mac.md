@@ -129,8 +129,8 @@ Quick reference for running Apache Spark on Mac.
 
 * Note:
 
-  Structured Streaming: processing structured data streams with relation queries (using Datasets and DataFrames, newer API than DStreams)
-  Spark Streaming: processing data streams using DStreams (old API)
+  - *Structured Streaming*: processing structured data streams with relation queries (using Datasets and DataFrames, newer API than DStreams)
+  - *Spark Streaming*: processing data streams using DStreams (old API)
 
 
 
