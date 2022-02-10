@@ -50,13 +50,7 @@ Quick reference for running Apache Spark on Mac.
   [Clang 4.0.1 (tags/RELEASE_401/final)] :: Anaconda, Inc. on darwin
   ...
   ...
-  Welcome to
-        "____              __  "
-      "/ __/__  ___ _____/ /__  "
-      "_\ \/ _ \/ _ `/ __/  '_/  "
-    "/__ / .__/\_,_/_/ /_/\_\   version 3.2.1  "
-       " /_/  "
-
+  Welcome to Spark version 3.2.1  
   Using Python version 3.7.7 (default, Mar 23 2020 17:31:31)
   Spark context Web UI available at http://192.168.29.131:4040
   Spark context available as 'sc' (master = local[*], app id = local-1644452442329).
