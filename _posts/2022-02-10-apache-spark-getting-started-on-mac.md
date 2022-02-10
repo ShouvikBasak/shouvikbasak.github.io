@@ -67,6 +67,8 @@ Quick reference for running Apache Spark on Mac.
 
 ### Launching Spark Cluster in Standalone Deploy Mode
 
+* Starts a Spark Cluster without a third-party cluster manager (like YARN for example)
+
 * Start Standalone Master: `$ sbin/start-master.sh`
 
   % sbin/start-master.sh
@@ -118,6 +120,17 @@ Quick reference for running Apache Spark on Mac.
   - Stop all Worker instances: `sbin/stop-worker.sh`
 
 * Reference guide for running Spark in Standalone Mode: [https://spark.apache.org/docs/latest/spark-standalone.html](https://spark.apache.org/docs/latest/spark-standalone.html)
+
+### Programming with Spark
+
+* Structured Streaming Programming Guide: [https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html)
+
+* Structured Streaming + Kafka Integration Guide: [https://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html](https://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html)
+
+* Note:
+
+  Structured Streaming: processing structured data streams with relation queries (using Datasets and DataFrames, newer API than DStreams)
+  Spark Streaming: processing data streams using DStreams (old API)
 
 
 
