@@ -32,15 +32,15 @@ Quick reference for running Apache Spark on Mac.
 
   - `$ java -version`
 
-      openjdk version "11.0.12" 2021-07-20
-      OpenJDK Runtime Environment Homebrew (build 11.0.12+0)
-      OpenJDK 64-Bit Server VM Homebrew (build 11.0.12+0, mixed mode)
+        openjdk version "11.0.12" 2021-07-20  
+        OpenJDK Runtime Environment Homebrew (build 11.0.12+0)  
+        OpenJDK 64-Bit Server VM Homebrew (build 11.0.12+0, mixed mode)
 
 * Extract and install: `tar -xvzf spark-3.2.0-bin-hadoop3.2.tgz`
 * In `~/.zshrc` file include:
 
-    `export SPARK_HOME="/Users/shouvik/opt/spark-3.2.0-bin-hadoop3.2"`
-    `export PATH="$PATH:$SPARK_HOME/bin"`
+    `export SPARK_HOME="/Users/shouvik/opt/spark-3.2.0-bin-hadoop3.2"`  
+    `export PATH="$PATH:$SPARK_HOME/bin"`  
     `export PYSPARK_PYTHON=python3`
 
 * Following libraries are built-in: 
