@@ -49,11 +49,25 @@ Quick reference for running Apache Spark on Mac.
     - MLlib (machine learning)
     - GraphX (graph)
 
-* Alternative pyspark install option: `$ pip install pyspark` (Installed to use it from Jupyter Notebook).
+* Alternative pyspark install option: `$ pip install pyspark`
 
 * Verify which version of pyspark will run:`$ which pyspark`
 
   /Users/shouvik/opt/spark-3.2.1-bin-hadoop3.2/bin/pyspark
+
+* Configure log4j
+
+    `mv spark-defaults.conf.template spark-defaults.conf`
+
+    Update spark-defaults.conf
+
+        spark.driver.extraJavaOptions      -Dlog4j.configuration=file:log4j.properties -Dspark.yarn.app.container.log.dir=app-logs -Dlogfile.name=hello-spark
+
+* For running Spark from Jupyter notebook
+  - `pip install findspark`
+  - In Jupyter Notebooks use
+      `import findspark`  
+      `findspark.init()`  
 
 * Interactive Python Shell: `$ bin/pyspark`
 
