@@ -21,6 +21,7 @@ Quick reference for running Apache Spark on Mac.
   - Java needs to be installed with PATH and JAVA_HOME set
 
     #Java configs in ~/.zshrc:
+
     `export PATH="$PATH:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/bin"`
     `export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre"`
 
@@ -36,7 +37,7 @@ Quick reference for running Apache Spark on Mac.
     - MLlib (machine learning)
     - GraphX (graph)
 
-* Alternative pyspark install option: `$ pip install pyspark` 
+* Alternative pyspark install option: `$ pip install pyspark` (_Installed to use it from Jupyter Notebook, but there should be an alternate way_).
 
 * Verify which version of pyspark will run:`$ which pyspark`
 
@@ -125,12 +126,16 @@ Quick reference for running Apache Spark on Mac.
 
 * Structured Streaming Programming Guide: [https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html)
 
-* Structured Streaming + Kafka Integration Guide: [https://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html](https://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html)
-
 * Note:
 
   - *Structured Streaming*: processing structured data streams with relation queries (using Datasets and DataFrames, newer API than DStreams)
   - *Spark Streaming*: processing data streams using DStreams (old API)
+
+### Integrating Spark Streaming with Kafka as input source
+
+* Structured Streaming + Kafka Integration Guide: [https://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html](https://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html)
+
+
 
 
 
