@@ -149,25 +149,4 @@ Quick reference for running Apache Spark on Mac.
 
 * Reference guide for running Spark in Standalone Mode: [https://spark.apache.org/docs/latest/spark-standalone.html](https://spark.apache.org/docs/latest/spark-standalone.html)
 
-### Programming with Spark
-
-* Structured Streaming Programming Guide: [https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html)
-
-* Note:
-
-  - *Structured Streaming*: processing structured data streams with relation queries (using Datasets and DataFrames, newer API than DStreams)
-  - *Spark Streaming*: processing data streams using DStreams (old API)
-
-### Integrating Spark Streaming with Kafka as input source
-
-* Structured Streaming + Kafka Integration Guide: [https://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html](https://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html)
-
-* Read data from Kafka
-* Write data to Kafka
-* For Python applications, it would be required to add the library `spark-sql-kafka-0-10_2.12` and its dependencies
-
-
-
-
-
 
