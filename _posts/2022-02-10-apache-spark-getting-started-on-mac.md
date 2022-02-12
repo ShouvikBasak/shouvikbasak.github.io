@@ -142,8 +142,8 @@ Please note that these are working notes for quick reference.
   - Start a Master: `sbin/start-master.sh`
   - Start a Worker instance: `sbin/start-worker.sh <master-spark-URL>`
   - Stop a Master: `sbin/stop-master.sh`
-  - Stop all Worker instances: `sbin/stop-worker.sh`
-
+  - Stop all Worker instances: `sbin/stop-worker.sh` or `sbin/stop-slave.sh` (for 2.4.6)
+  
 * Reference guide for running Spark in Standalone Mode: [https://spark.apache.org/docs/latest/spark-standalone.html](https://spark.apache.org/docs/latest/spark-standalone.html)
 
 
@@ -156,7 +156,7 @@ Please note that these are working notes for quick reference.
 
 ### To use Spark 2.4.6
 
-Follow above process
+Follow above process with below caveats
 
 **Note:**
 * Spark 2.4.6 worked with JDK8 and Python 3.7.12
