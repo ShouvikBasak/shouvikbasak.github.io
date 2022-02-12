@@ -9,10 +9,13 @@ date: 2022-02-10 06:15:09 +0530
 
 Quick reference for running Apache Spark on Mac.
 
+Please note that these are working notes for quick reference.
+
 * Quick Start documentation: [https://spark.apache.org/docs/latest/quick-start.html](https://spark.apache.org/docs/latest/quick-start.html)
 * RDD Programming Guide: [https://spark.apache.org/docs/latest/rdd-programming-guide.html](https://spark.apache.org/docs/latest/rdd-programming-guide.html)
 
 * Download: [https://spark.apache.org/downloads.html](https://spark.apache.org/downloads.html)
+  - Older versions of Spark can be downloaded from [https://archive.apache.org/dist/spark/](https://archive.apache.org/dist/spark/)
 * Note:
   - Spark uses Hadoop’s client libraries for HDFS and YARN. Downloads are pre-packaged with Hadoop versions. 
   - “Hadoop free” binary downloads are also available to run Spark with any Hadoop version by augmenting Spark’s classpath.
@@ -24,17 +27,26 @@ Quick reference for running Apache Spark on Mac.
       `/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home` as an example
 
   - Remove any old version of JDK if required by removing the directory and the associated paths in configuration files, if any
-  - Install JDK 11: `$ brew install java11`
-    - Gets installed at: `/usr/local/Cellar/openjdk@11/11.0.12`
+  - Install JDK 11
+    - Gets installed at: `/Library/Java/JavaVirtualMachines/jdk-11.0.14.jdk/Contents/Home` (Java 11)  
+                         `/Library/java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home` (Java 8)
   - Update ~/.zshrc:
 
-      `export JAVA_HOME="/usr/local/Cellar/openjdk@11/11.0.12"`  
+      `export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.14.jdk/Contents/Home"`  (Java 11)  
+      `export JAVA_HOME="/Library/java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home"` (Java 8)
 
-  - `$ java -version`
+  - `$ java -version` (Java 11)
 
-        openjdk version "11.0.12" 2021-07-20  
-        OpenJDK Runtime Environment Homebrew (build 11.0.12+0)  
-        OpenJDK 64-Bit Server VM Homebrew (build 11.0.12+0, mixed mode)
+        java version "11.0.14" 2022-01-18 LTS
+        Java(TM) SE Runtime Environment 18.9 (build 11.0.14+8-LTS-263)
+        Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.14+8-LTS-263, mixed mode)
+
+ - `$ java -version` (Java 8)
+
+        java version "1.8.0_321"
+        Java(TM) SE Runtime Environment (build 1.8.0_321-b07)
+        Java HotSpot(TM) 64-Bit Server VM (build 25.321-b07, mixed mode)
+
 
 * Extract and install: `tar -xvzf spark-3.2.0-bin-hadoop3.2.tgz`
 * In `~/.zshrc` file include:
@@ -53,15 +65,7 @@ Quick reference for running Apache Spark on Mac.
 
 * Verify which version of pyspark will run:`$ which pyspark`
 
-  /Users/shouvik/opt/spark-3.2.1-bin-hadoop3.2/bin/pyspark
-
-* For running Spark from Jupyter notebook
-  - `pip install findspark`
-  - In Jupyter Notebooks use
-      `import findspark`  
-      `findspark.init()`  
-
-* Interactive Python Shell: `$ bin/pyspark`
+    /Users/shouvik/opt/spark-3.2.1-bin-hadoop3.2/bin/pyspark
 
 * Run Spark Python Shell: `$ bin/pyspark`
 
@@ -90,8 +94,7 @@ Quick reference for running Apache Spark on Mac.
 
 * Start Standalone Master: `$ sbin/start-master.sh`
 
-  % sbin/start-master.sh
-  starting org.apache.spark.deploy.master.Master, logging to /Users/shouvik/opt/spark-3.2.1-bin-hadoop3.2/logs/spark-shouvik-org.apache.spark.deploy.master.Master-1-Shouviks-MacBook-Pro.local.out
+   starting org.apache.spark.deploy.master.Master, logging to /Users/shouvik/opt/spark-3.2.1-bin-hadoop3.2/logs/spark-shouvik-org.apache.spark.deploy.master.Master-1-Shouviks-MacBook-Pro.local.out
 
   - Check log file: `/Users/shouvik/opt/spark-3.2.1-bin-hadoop3.2/logs/spark-shouvik-org.apache.spark.deploy.master.Master-1-Shouviks-MacBook-Pro.local.out` and note the following
 
@@ -109,9 +112,11 @@ Quick reference for running Apache Spark on Mac.
 * Start one or more Workers: `sbin/start-worker.sh <master-spark-URL>`
   - Get the `<master-spark-URL>` from the information provided when starting the Master or from the Master Web UI
 
-    `$ sbin/start-worker.sh spark://Shouviks-MacBook-Pro.local:7077`
+    `$ sbin/start-worker.sh spark://Shouviks-MacBook-Pro.local:7077`   
       
       starting org.apache.spark.deploy.worker.Worker, logging to /Users/shouvik/opt/spark-3.2.1-bin-hadoop3.2/logs/spark-shouvik-org.apache.spark.deploy.worker.Worker-1-Shouviks-MacBook-Pro.local.out
+
+    `$ sbin/start-slave.sh spark://Shouviks-MacBook-Pro.local:7077` (for Spark 2.4.6) 
 
   - Check the log `/Users/shouvik/opt/spark-3.2.1-bin-hadoop3.2/logs/spark-shouvik-org.apache.spark.deploy.worker.Worker-1-Shouviks-MacBook-Pro.local.out`
 
@@ -135,10 +140,72 @@ Quick reference for running Apache Spark on Mac.
 
 * Quick set of commands:
   - Start a Master: `sbin/start-master.sh`
-  - Start a Worker instance: `sbin/start-worker.sh`
+  - Start a Worker instance: `sbin/start-worker.sh <master-spark-URL>`
   - Stop a Master: `sbin/stop-master.sh`
   - Stop all Worker instances: `sbin/stop-worker.sh`
 
 * Reference guide for running Spark in Standalone Mode: [https://spark.apache.org/docs/latest/spark-standalone.html](https://spark.apache.org/docs/latest/spark-standalone.html)
+
+
+* For running Spark from Jupyter notebook
+  - `pip install findspark`
+  - In Jupyter Notebooks use
+      `import findspark`  
+      `findspark.init()`  
+
+
+### To use Spark 2.4.6
+
+Follow above process
+
+**Note:**
+* Spark 2.4.6 worked with JDK8 and Python 3.7.12
+* Spark 2.4.6 is not compatible with 3.9 (or possibly 3.7 and above)
+
+* Create Anaconda environment with Python 3.7
+/opt/anaconda3> `conda create -n env_python3.7 python=3.7`
+
+environment location: `/opt/anaconda3/envs/env_python3.7`
+
+Activate environment: `conda activate env_python3.7`
+To deactivate an active environment: `conda deactivate`
+
+`python --version`  
+Python 3.7.12
+
+`which pyspark`  
+/Users/shouvik/opt/spark-2.4.6-bin-hadoop2.6/bin/pyspark
+
+`jupyter notebook` runs  
+Open a jupyter notebook and run in a shell:  
+`!python --version`  
+Output: Python 3.7.12  
+
+By default opening Terminal:  
+`python --version`
+Python 3.9.7  
+(Default Anaconda env)  
+
+Activate environment: `conda activate env_python3.7`
+
+`conda activate env_python3.7`                    
+
+`pyspark`
+Python 3.7.12 | packaged by conda-forge | (default, Oct 26 2021, 05:59:23) 
+[Clang 11.1.0 ] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+....
+....
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+Welcome to Spark version 2.4.6
+Using Python version 3.7.12 (default, Oct 26 2021 05:59:23)
+SparkSession available as 'spark'.
+>>> 
+
+No errors observed
+
+
 
 
