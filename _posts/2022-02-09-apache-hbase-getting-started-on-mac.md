@@ -7,7 +7,7 @@ tags: [HBase, Apache HBase]
 date: 2022-02-09 08:15:09 +0530
 ---
 
-Quick reference for a Standalone HBase installation on a Mac.
+Quick reference for a Standalone HBase installation on a Mac. Please note that these are quick working notes for reference and not an elaborate documentation.
 
 Apache HBase Reference Guide: [https://hbase.apache.org/book.html](https://hbase.apache.org/book.html)
 
@@ -17,6 +17,7 @@ Apache HBase Reference Guide: [https://hbase.apache.org/book.html](https://hbase
 [https://hbase.apache.org/downloads.html](https://hbase.apache.org/downloads.html) => (download the bin for the stable version) = > download from [https://www.apache.org/dyn/closer.lua/hbase/2.4.9/hbase-2.4.9-bin.tar.gz](https://www.apache.org/dyn/closer.lua/hbase/2.4.9/hbase-2.4.9-bin.tar.gz)
 
 **Extract and install:** `tar -xvzf hbase-2.4.9-bin.tar.gz`
+
 
 ## Standalone mode using local filesystem
 
@@ -61,7 +62,7 @@ Verify that there is _one_ running process `HMaster`. In standalone mode HBase r
     80356 Jps
     80156 HMaster
 
-HBase Web UI at http://localhost:16010 was not accessible
+HBase Web UI at `http://localhost:16010` was not accessible
 
 **Solved above warnings/error:**
 
@@ -82,7 +83,7 @@ The warning is gone!
     81571 HMaster
     81732 Jps
 
-HBase Web UI: http://localhost:16010 is now accessible => http://localhost:16010/master-status
+HBase Web UI: `http://localhost:16010` is now accessible => `http://localhost:16010/master-status`
 
 
 **Connect to HBase**
@@ -204,6 +205,7 @@ hbase:020:0> `list`
     => []
 
 
+
 ## Standalone mode with HBase over HDFS
 
 **To run in standalone mode and use HDFS instead of local filesystem**
@@ -288,7 +290,9 @@ jps command should show the HMaster processes running. HMaster was not running
 
 Solution:
 
-Cleaned up Hadoop configuration - stopped dfs, deleted /tmp/hadoop-dir, name node format, start hadoop
+* Cleaned up Hadoop configuration - stopped dfs, deleted /tmp/hadoop-dir, name node format, start hadoop
+* If there is a Hadoop installation and a path exists in .zshrc file, comment it to prevent teh Log4J error
+
 
 `bin/start-hbase.sh`
 
@@ -339,18 +343,71 @@ Following directories were created after table creation. This confirms that HBas
 
 `bin/hadoop fs -ls /hbase`
 
-    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:08 /hbase/.hbck
-    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:09 /hbase/.tmp
-    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:08 /hbase/MasterData
-    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:08 /hbase/WALs
-    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:08 /hbase/archive
-    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:08 /hbase/corrupt
-    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:09 /hbase/data
-    -rw-r--r--   3 shouvik supergroup         42 2022-02-09 21:08 /hbase/hbase.id
-    -rw-r--r--   3 shouvik supergroup          7 2022-02-09 21:08 /hbase/hbase.version
-    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:08 /hbase/mobdir
-    drwxr-xr-x   - shouvik supergroup          0 2022-02-09 21:08 /hbase/oldWALs
-    drwx--x--x   - shouvik supergroup          0 2022-02-09 21:08 /hbase/staging
+    /hbase/.hbck
+    /hbase/.tmp
+    /hbase/MasterData
+    /hbase/WALs
+    /hbase/archive
+    /hbase/corrupt
+    /hbase/data
+    /hbase/hbase.id
+    /hbase/hbase.version
+    /hbase/mobdir
+    /hbase/oldWALs
+    /hbase/staging
+
+
+## Pseudo-Distributed mode with HBase over HDFS
+
+In Pseudo-distributed mode HBase runs each of the following daemons as a separate process on a single host
+* HMaster
+* HRegionServer
+* ZooKeeper
+
+Stop HBase if running: `bin/stop-hbase.sh`
+
+Update `conf/hbase-site.xml`:
+
+        <property>
+        <name>hbase.cluster.distributed</name>
+        <value>true</value>
+        </property>
+
+        <property>
+            <name>hbase.rootdir</name>
+            <value>hdfs://localhost:9000/hbase</value>
+        </property>
+
+Note: HBase will create /hbase when it is started. No need for manual creation.
+
+Start Hbase: `bin/start-hbase.sh`
+
+`jps`
+
+    37088 DataNode
+    **38305 HRegionServer**
+    38434 Jps
+    36978 NameNode
+    37226 SecondaryNameNode
+    **38139 HMaster**
+    38063 HQuorumPeer
+
+`hdfs dfs -ls /`
+
+    drwxr-xr-x   - shouvik supergroup          0 2022-02-17 15:50 /hbase
+
+`hdfs dfs -ls /hbase` shows the list of directories:
+    
+    /hbase/MasterData
+    /hbase/WALs
+    /hbase/archive
+    /hbase/corrupt
+    /hbase/data
+    /hbase/hbase.id
+    /hbase/hbase.version
+    /hbase/mobdir
+    /hbase/oldWALs
+    /hbase/staging
 
 
 
