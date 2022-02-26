@@ -408,6 +408,10 @@ Start Hbase: `bin/start-hbase.sh`
     /hbase/mobdir
     /hbase/oldWALs
     /hbase/staging
+    
+
+
+
 
 
 
