@@ -46,7 +46,7 @@ plugins:
 
 permalink: /:categories/:title/
 show_excerpts: true
-google_analytics:
+google_analytics: G-VYGMH1YZCZ
 disqus:
     shortname: shouvik-basak
 header_pages:
