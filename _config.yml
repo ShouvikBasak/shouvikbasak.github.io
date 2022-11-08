@@ -44,6 +44,8 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
+theme: minima
+
 permalink: /:categories/:title/
 show_excerpts: true
 google_analytics: G-VYGMH1YZCZ
