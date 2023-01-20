@@ -14,9 +14,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Shouvik Basak
-# email: shouvik[at]shouvikbasak.com
+# email: 
 description: >- # this means to ignore newlines until "baseurl:"
-  My personal blog on technology and beyond 
+  Personal blog on technology and beyond 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://shouvikbasak.net" # the base hostname & protocol for your site, e.g. http://example.com
 rss: RSS
@@ -26,8 +26,9 @@ rss: RSS
 
 # Build settings
 markdown: kramdown
+
 theme: minima
-remote_theme: jekyll/minima #Added this line for this theme to work on github pages
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
