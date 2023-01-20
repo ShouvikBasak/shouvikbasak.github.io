@@ -12,6 +12,9 @@ Some of my favourite books that I would recommend reading (or listening!). I lis
 * [37 Things One Architect Knows About IT Transformation](https://leanpub.com/37things) by Gregor Hohpe
 * [Cloud Strategy - An Architect Elevator Guide to Successful Cloud Migration](https://leanpub.com/cloudstrategy) by Gregor Hohpe
 
+#### Machine Learning & Deep Learning
+* [Dive into Deep Learning](https://d2l.ai/), an open source book executable in Jupyter Notebook, Google Colab & Amazon SageMaker Studio Lab
+
 #### DevOps
 * The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business by Gene Kim, Kevin Behr & George Spafford
 * The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations by Gene Kim, Patrick Debois, John Willis & Jez Humble
