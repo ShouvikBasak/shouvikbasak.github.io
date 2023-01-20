@@ -27,6 +27,7 @@ rss: RSS
 # Build settings
 markdown: kramdown
 theme: minima
+remote_theme: jekyll/minima #Added this line for this theme to work on github pages
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
