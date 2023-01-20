@@ -16,7 +16,7 @@
 title: Shouvik Basak
 # email: shouvik[at]shouvikbasak.com
 description: >- # this means to ignore newlines until "baseurl:"
-  My personal blog on technology and beyond. 
+  My personal blog on technology and beyond 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://shouvikbasak.net" # the base hostname & protocol for your site, e.g. http://example.com
 rss: RSS
