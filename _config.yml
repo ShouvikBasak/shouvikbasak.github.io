@@ -27,9 +27,11 @@ linkedin_username: shouvikbasak
 # Build settings
 markdown: kramdown
 
-theme: minima
+#theme: minima
+remote_theme: jekyll/minima #GA
 
 plugins:
+  - jekyll-remote-theme #GA
   - jekyll-feed
   - jekyll-seo-tag
 #  - jekyll-sitemap
