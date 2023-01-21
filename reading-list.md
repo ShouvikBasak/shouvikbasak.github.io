@@ -4,8 +4,6 @@ title: Reading List
 permalink: /reading-list/
 ---
 
-Some of my favourite books that I would recommend reading (or listening!). I listen to books in Audible, helping me to effectively use the time when I am driving or walking. Another website I have discovered is [Leanpub](https://leanpub.com/), a lean publishing platform with an agile approach to writing books.
-
 ### Technology
 
 #### Architecture
@@ -26,6 +24,9 @@ Some of my favourite books that I would recommend reading (or listening!). I lis
 * [The site Reliability Workbook: Practical Ways to Implement SRE](https://landing.google.com/sre/workbook/toc/)
 * [Building Secure & Reliable Systems: Best Practices for Designing, Implementing and Maintaining Systems](https://landing.google.com/sre/books/)
 
+#### Hands On Labs
+* [Qwiklabs](https://www.qwiklabs.com/). Hands on labs on GCP. This is not free upfront, however when you participate in GCP online events, you get credits for practising the labs. Once you are part of this ecosystem you would realize that you can get enough credits regularly to use the service at no cost. Qwiklabs is now owned by Google and Google provides all their trainings using this platform.
+* [Katacoda](https://katacoda.com/). Various playgrounds are available to try your hand on and learn by doing. It has number of labs from Docker, Kubernetes, Serverless, Tensorflow and many more.
 
 ### Self Development (soft skills)
 * Linchpin: Are You Indispensable? by Seth Godin
