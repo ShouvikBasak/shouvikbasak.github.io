@@ -55,6 +55,5 @@ disqus:
     shortname: shouvik-basak
 header_pages:
   - index.md
-  - about.md
-  - learning-resources.md
   - reading-list.md
+  - about.md
