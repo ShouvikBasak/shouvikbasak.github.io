@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Articles
+title: Blog
 ---
 <div id="home">
   <ul class="posts">

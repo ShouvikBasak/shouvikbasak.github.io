@@ -1,0 +1,12 @@
+---
+---
+
+@import
+  "minima/skins/{{ site.minima.skin | default: 'classic' }}",
+  "minima/initialize";
+
+H1 {
+  font-size: 10pt;
+  // font-style: italic;
+  margin-bottom: 5px;
+}
