@@ -3,7 +3,7 @@ layout: post
 title:  "How to choose your Cloud provider?"
 description: "Are you planning to migrate your on-premise workloads to the Cloud? Are you planning to build your startup in the Cloud and wondering which Cloud will be most appropriate? Well, choosing the Cloud provider is not an easy decision. Here I document the list of criteria that would help make the decision." 
 categories: [Cloud]
-tags: [cloud, aws, azure, gcp]
+tags: [AWS, Azure, GCP]
 date: 2020-07-04 21:01:09 +0530
 ---
 When we need to migrate workloads to the Cloud or build a greenfield environment in the Cloud, a point of discussion that often comes up is which Cloud provider to choose? The decision is often straightforward for organizations that are already on a specific Cloud for the last several years, and have adopted a specific Cloud provider. For any new workload migration or to build Cloud Native Apps, for obvious reasons that specific Cloud provider is often the preferred one. Unless, there is a compelling reason to look at some specialized capability of another Cloud provider.

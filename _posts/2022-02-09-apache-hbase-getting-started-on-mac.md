@@ -2,7 +2,7 @@
 layout: post
 title:  "Apache HBase - getting started on Mac"
 description: "Quick reference for getting started with Apache HBase on a Mac" 
-categories: [Apache]
+categories: [Data Engineering]
 tags: [HBase, Apache HBase]
 date: 2022-02-09 08:15:09 +0530
 ---

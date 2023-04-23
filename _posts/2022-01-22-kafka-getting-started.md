@@ -2,8 +2,8 @@
 layout: post
 title:  "Kafka - getting started"
 description: "Quick reference for getting started with Kafka" 
-categories: [Apache]
-tags: [Kafka, Apache Kafka]
+categories: [Data Engineering]
+tags: [Kafka, Apache]
 date: 2022-01-22 10:15:09 +0530
 ---
 

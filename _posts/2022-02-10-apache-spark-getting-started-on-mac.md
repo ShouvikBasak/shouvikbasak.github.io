@@ -2,7 +2,7 @@
 layout: post
 title:  "Apache Spark - getting started on Mac"
 description: "Quick reference for getting started with Apache Spark" 
-categories: [Apache]
+categories: [Data Engineering]
 tags: [Spark, Apache Spark]
 date: 2022-02-10 06:15:09 +0530
 ---

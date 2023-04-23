@@ -2,8 +2,8 @@
 layout: post
 title:  "Jekyll on macOS Apple M1 [Solved]"
 description: "Installing Jekyll on macOS Apple M1 (ARM64 architecture). The post provides step by step instructions for solving issues faced using system default Ruby, how to install and use an updated Ruby version for Jekyll installation. Jekyll is compatible with macOS with ARM64 architecture and works on Apple M1 MacBooks" 
-categories: [Website]
-tags: [jekyll, Apple M1, macOS]
+categories: [Miscellaneous Tech]
+tags: [Jekyll, Apple M1, MacOS]
 date: 2021-05-11 07:16:09 +0530
 ---
 ![Jekyll on macOS Apple M1 ]({{ "/assets/jekyll_on_AppleM1.png" }})

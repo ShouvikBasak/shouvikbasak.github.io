@@ -2,8 +2,8 @@
 layout: post
 title:  "Blockchain - the business game changer"
 description: "An introduction to blockchain with a high-level overview of how blockchain technology operates, and the implications of a secure, distributed ledger system." 
-categories: [Architecture]
-tags: [blockchain]
+categories: [Miscellaneous Tech]
+tags: [Blockchain]
 date:   2018-06-08 07:55:09 +0530
 ---
 It all started with Bitcoin in 2009. The underlying technology used by bitcoin was the first version of blockchain. Since then, blockchain has come a long way. Blockchain not only power the myriad cryptocurrencies, but now is becoming the foundation for many applications. From the public implementation of blockchains, primarily for cryptocurrencies, the evolution is towards the private implementation of blockchain within enterprises, embedded into applications.

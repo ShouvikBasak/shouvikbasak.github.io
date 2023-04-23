@@ -2,7 +2,7 @@
 layout: post
 title:  "Apache Hadoop - getting started on Mac"
 description: "Quick reference for getting started with Apache Hadoop on a Mac" 
-categories: [Apache]
+categories: [Data Engineering]
 tags: [Hadoop, Apache Hadoop, Install Hadoop on a Mac]
 date: 2022-01-30 15:39:09 +0530
 ---
