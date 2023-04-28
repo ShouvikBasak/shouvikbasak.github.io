@@ -6,7 +6,7 @@ permalink: /categories/
 
 <div id="home">
 <!-- <h1>Posts by Category</h1> -->
-{% for category in site.categories % | sort %}
+{% for category in site.categories %}
   <h3>{{ category[0] }}</h3>
   <ul>
     {% for post in category[1] %}
