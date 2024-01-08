@@ -51,6 +51,8 @@ plugins:
 permalink: /:categories/:title/
 show_excerpts: true
 google_analytics: G-VYGMH1YZCZ
+sc_project: 12955710
+sc_security: df678346
 disqus:
     shortname: shouvik-basak
 header_pages:
