@@ -4,14 +4,12 @@ title: About
 permalink: /about/
 ---
 
-I am based in Delhi, India and work at a leading Fortune 500 global IT services organization as a Solution Architect, helping clients on their Cloud and Digital Transformation journey. You can find more on what I do at work in my [LinkedIn](https://www.linkedin.com/in/shouvikbasak/) profile.
+I work across cloud, infrastructure, data, and AI, and currently serve as a Solution Architect at a Fortune 500 global IT services organization. You can find more about my professional work on [LinkedIn](https://www.linkedin.com/in/shouvikbasak/).
 
-My technology interests are varied and always evolving, with my current interest being more on AI, Data Science, Data Engineering and Cloud. Long back when I decided to choose IT as my career, I basically managed to convert my hobby into my profession. I am intrigued by insights derived from data and the opportunities it brings to predict, decide and act. To fulfil my keen interest in this field of study, I am currently pursuing my postgrad in Data Science.
+My interests continue to evolve across AI, data science, data engineering, and cloud architecture. I enjoy translating complex technology choices into practical outcomes, especially where architecture, data, and business context intersect. This blog is my space to think out loud, share hands-on lessons, and reflect on what I am learning along the way.
 
-I also love telling stories through the visual medium and do editorial and documentary photography projects. You can find more about my photography projects, published work and workshops in my photography website at [shouvikbasak.com](https://www.shouvikbasak.com/).
+Beyond technology, I tell stories through editorial and documentary photography. If that interests you, visit [shouvikbasak.com](https://www.shouvikbasak.com/).
 
-Disclaimer: The postings on this site are my own and don’t necessarily represent my employer’s positions, strategies or opinions.
-
-Thanks for visiting.
+Thanks for reading and following along.
 
 – Shouvik
