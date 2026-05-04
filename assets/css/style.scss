@@ -11,3 +11,14 @@ H1 {
   margin-bottom: 5px;
   // font-family:'Courier New', Courier, monospace;
 }
+
+.site-footer .footer-description {
+  margin-bottom: 0.35rem;
+}
+
+.site-footer .footer-disclaimer {
+  margin-top: 0;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: $brand-color-dimmed;
+}
