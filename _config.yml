@@ -20,9 +20,6 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://shouvikbasak.net" # the base hostname & protocol for your site, e.g. http://example.com
 rss: RSS
-linkedin_username: shouvikbasak
-github_username: shouvikbasak
-
 # Build settings
 markdown: kramdown
 
@@ -48,21 +45,23 @@ plugins:
 #   - vendor/ruby/
 
 permalink: /:categories/:title/
-show_excerpts: true
 google_analytics: G-VYGMH1YZCZ
 sc_project: 12955710 #statcounter
 sc_security: df678346 #statcounter
 disqus:
     shortname: shouvik-basak
-header_pages:
-  - categories.md
-  - index.md
-  - reading-list.md
-  - about.md
-
 minima:
-  social_links:
-    - { platform: linkedin, user_url: "https://www.linkedin.com/in/shouvikbasak" }
-    - { platform: github, user_url: "https://github.com/ShouvikBasak/" }
-  
   skin: auto
+  show_excerpts: true
+  nav_pages:
+    - categories.md
+    - index.md
+    - reading-list.md
+    - about.md
+  social_links:
+    - title: GitHub
+      icon: github
+      url: "https://github.com/shouvikbasak"
+    - title: LinkedIn
+      icon: linkedin
+      url: "https://www.linkedin.com/in/shouvikbasak"
