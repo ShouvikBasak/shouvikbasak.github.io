@@ -6,7 +6,7 @@ categories: [AI]
 tags: [Agentic AI, Google Antigravity]
 date: 2026-05-04 06:28:14 +0530
 ---
-![Sample App created using Google Antigravity]({{ "/assets/app-screenshot-elected-india.png" }})
+![Sample App created using Google Antigravity]({{ "/assets/app-screenshot-electedindia.png" }})
 
 **TL;DR:** As AI agents become better at writing large amounts of code, the Architect’s role shifts to defining constraints, intent and control. Human‑in‑the‑loop is not about slowing agents down, it’s the architectural control that preserves intent, security, and understanding. It prevents scope creep, code sprawl, and loss of architectural clarity.
 
