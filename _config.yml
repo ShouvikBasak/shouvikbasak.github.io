@@ -65,3 +65,11 @@ minima:
     - title: LinkedIn
       icon: linkedin
       url: "https://www.linkedin.com/in/shouvikbasak"
+
+# Categories listed here appear first on /categories/ in this exact order.
+# Any categories not listed here are appended alphabetically.
+category_order:
+  - AI
+  - Cloud
+  - Data Engineering
+  - Miscellaneous Tech
