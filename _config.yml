@@ -54,8 +54,8 @@ minima:
   skin: auto
   show_excerpts: true
   nav_pages:
-    - categories.md
     - index.md
+    - categories.md
     - reading-list.md
     - about.md
   social_links:
