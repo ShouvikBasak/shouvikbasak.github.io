@@ -16,7 +16,7 @@
 title: Shouvik Basak
 # email: 
 description: >- # this means to ignore newlines until "baseurl:"
-  A practitioner's notebook on AI, cloud, and data engineering, sharing practical lessons, architectural trade-offs, and occasional reflections beyond code.
+  A practitioner's notebook on AI, cloud, and data engineering, sharing practical lessons, architectural trade-offs, and occasional reflections beyond technology.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://shouvikbasak.net" # the base hostname & protocol for your site, e.g. http://example.com
 rss: RSS
